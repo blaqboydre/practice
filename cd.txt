@@ -1,0 +1,170 @@
+BUILTIN(1)                  General Commands Manual                 BUILTIN(1)
+
+NNAAMMEE
+     bbuuiillttiinn, !!, %%, .., ::, @@, [[, {{, }}, aalliiaass, aalllloocc, bbgg, bbiinndd, bbiinnddkkeeyy, bbrreeaakk,
+     bbrreeaakkssww, bbuuiillttiinnss, ccaassee, ccdd, cchhddiirr, ccoommmmaanndd, ccoommpplleettee, ccoonnttiinnuuee, ddeeffaauulltt,
+     ddiirrss, ddoo, ddoonnee, eecchhoo, eecchhoottcc, eelliiff, eellssee, eenndd, eennddiiff, eennddssww, eessaacc, eevvaall,
+     eexxeecc, eexxiitt, eexxppoorrtt, ffaallssee, ffcc, ffgg, ffiilleetteesstt, ffii, ffoorr, ffoorreeaacchh, ggeettooppttss,
+     gglloobb, ggoottoo, hhaasshh, hhaasshhssttaatt, hhiissttoorryy, hhuupp, iiff, jjoobbiidd, jjoobbss, kkiillll, lliimmiitt,
+     llooccaall, lloogg, llooggiinn, llooggoouutt, llss--FF, nniiccee, nnoohhuupp, nnoottiiffyy, oonniinnttrr, ppooppdd,
+     pprriinntteennvv, pprriinnttff, ppuusshhdd, ppwwdd, rreeaadd, rreeaaddoonnllyy, rreehhaasshh, rreeppeeaatt, rreettuurrnn,
+     sscchheedd, sseett, sseetteennvv, sseettttcc, sseettttyy, sseettvvaarr, sshhiifftt, ssoouurrccee, ssttoopp, ssuussppeenndd,
+     sswwiittcchh, tteellllttcc, tteesstt, tthheenn, ttiimmee, ttiimmeess, ttrraapp, ttrruuee, ttyyppee, uulliimmiitt, uummaasskk,
+     uunnaalliiaass, uunnccoommpplleettee, uunnhhaasshh, uunnlliimmiitt, uunnsseett, uunnsseetteennvv, uunnttiill, wwaaiitt,
+     wwhheerree, wwhhiicchh, wwhhiillee – shell built-in commands
+
+SSYYNNOOPPSSIISS
+     See the built-in command description in the appropriate shell manual
+     page.
+
+DDEESSCCRRIIPPTTIIOONN
+     Shell builtin commands are commands that can be executed within the
+     running shell's process.  Note that, in the case of csh(1) builtin
+     commands, the command is executed in a subshell if it occurs as any
+     component of a pipeline except the last.
+
+     If a command specified to the shell contains a slash ‘/’, the shell will
+     not execute a builtin command, even if the last component of the
+     specified command matches the name of a builtin command.  Thus, while
+     specifying “echo” causes a builtin command to be executed under shells
+     that support the eecchhoo builtin command, specifying “/bin/echo” or “./echo”
+     does not.
+
+     While some builtin commands may exist in more than one shell, their
+     operation may be different under each shell which supports them.  Below
+     is a table which lists shell builtin commands, the standard shells that
+     support them and whether they exist as standalone utilities.
+
+     Only builtin commands for the csh(1) and sh(1) shells are listed here.
+     Consult a shell's manual page for details on the operation of its builtin
+     commands.  Beware that the sh(1) manual page, at least, calls some of
+     these commands “built-in commands” and some of them “reserved words”.
+     Users of other shells may need to consult an info(1) page or other
+     sources of documentation.
+
+     Commands marked “No**” under _E_x_t_e_r_n_a_l do exist externally, but are
+     implemented as scripts using a builtin command of the same name.
+
+           _C_o_m_m_a_n_d           _E_x_t_e_r_n_a_l        csh(1)       sh(1)
+           !!                 No              No           Yes
+           %%                 No              Yes          No
+           ..                 No              No           Yes
+           ::                 No              Yes          Yes
+           @@                 No              Yes          Yes
+           [[                 Yes             No           Yes
+           {{                 No              No           Yes
+           }}                 No              No           Yes
+           aalliiaass             No**            Yes          Yes
+           aalllloocc             No              Yes          No
+           bbgg                No**            Yes          Yes
+           bbiinndd              No              No           Yes
+           bbiinnddkkeeyy           No              Yes          No
+           bbrreeaakk             No              Yes          Yes
+           bbrreeaakkssww           No              Yes          No
+           bbuuiillttiinn           No              No           Yes
+           bbuuiillttiinnss          No              Yes          No
+           ccaassee              No              Yes          Yes
+           ccdd                No**            Yes          Yes
+           cchhddiirr             No              Yes          Yes
+           ccoommmmaanndd           No**            No           Yes
+           ccoommpplleettee          No              Yes          No
+           ccoonnttiinnuuee          No              Yes          Yes
+           ddeeffaauulltt           No              Yes          No
+           ddiirrss              No              Yes          No
+           ddoo                No              No           Yes
+           ddoonnee              No              No           Yes
+           eecchhoo              Yes             Yes          Yes
+           eecchhoottcc            No              Yes          No
+           eelliiff              No              No           Yes
+           eellssee              No              Yes          Yes
+           eenndd               No              Yes          No
+           eennddiiff             No              Yes          No
+           eennddssww             No              Yes          No
+           eessaacc              No              No           Yes
+           eevvaall              No              Yes          Yes
+           eexxeecc              No              Yes          Yes
+           eexxiitt              No              Yes          Yes
+           eexxppoorrtt            No              No           Yes
+           ffaallssee             Yes             No           Yes
+           ffcc                No**            No           Yes
+           ffgg                No**            Yes          Yes
+           ffiilleetteesstt          No              Yes          No
+           ffii                No              No           Yes
+           ffoorr               No              No           Yes
+           ffoorreeaacchh           No              Yes          No
+           ggeettooppttss           No**            No           Yes
+           gglloobb              No              Yes          No
+           ggoottoo              No              Yes          No
+           hhaasshh              No**            No           Yes
+           hhaasshhssttaatt          No              Yes          No
+           hhiissttoorryy           No              Yes          No
+           hhuupp               No              Yes          No
+           iiff                No              Yes          Yes
+           jjoobbiidd             No              No           Yes
+           jjoobbss              No**            Yes          Yes
+           kkiillll              Yes             Yes          Yes
+           lliimmiitt             No              Yes          No
+           llooccaall             No              No           Yes
+           lloogg               No              Yes          No
+           llooggiinn             Yes             Yes          No
+           llooggoouutt            No              Yes          No
+           llss--FF              No              Yes          No
+           nniiccee              Yes             Yes          No
+           nnoohhuupp             Yes             Yes          No
+           nnoottiiffyy            No              Yes          No
+           oonniinnttrr            No              Yes          No
+           ppooppdd              No              Yes          No
+           pprriinntteennvv          Yes             Yes          No
+           pprriinnttff            Yes             No           Yes
+           ppuusshhdd             No              Yes          No
+           ppwwdd               Yes             No           Yes
+           rreeaadd              No**            No           Yes
+           rreeaaddoonnllyy          No              No           Yes
+           rreehhaasshh            No              Yes          No
+           rreeppeeaatt            No              Yes          No
+           rreettuurrnn            No              No           Yes
+           sscchheedd             No              Yes          No
+           sseett               No              Yes          Yes
+           sseetteennvv            No              Yes          No
+           sseettttcc             No              Yes          No
+           sseettttyy             No              Yes          No
+           sseettvvaarr            No              No           Yes
+           sshhiifftt             No              Yes          Yes
+           ssoouurrccee            No              Yes          No
+           ssttoopp              No              Yes          No
+           ssuussppeenndd           No              Yes          No
+           sswwiittcchh            No              Yes          No
+           tteellllttcc            No              Yes          No
+           tteesstt              Yes             No           Yes
+           tthheenn              No              No           Yes
+           ttiimmee              Yes             Yes          No
+           ttiimmeess             No              No           Yes
+           ttrraapp              No              No           Yes
+           ttrruuee              Yes             No           Yes
+           ttyyppee              No**            No           Yes
+           uulliimmiitt            No**            No           Yes
+           uummaasskk             No**            Yes          Yes
+           uunnaalliiaass           No**            Yes          Yes
+           uunnccoommpplleettee        No              Yes          No
+           uunnhhaasshh            No              Yes          No
+           uunnlliimmiitt           No              Yes          No
+           uunnsseett             No              Yes          Yes
+           uunnsseetteennvv          No              Yes          No
+           uunnttiill             No              No           Yes
+           wwaaiitt              No**            Yes          Yes
+           wwhheerree             No              Yes          No
+           wwhhiicchh             Yes             Yes          No
+           wwhhiillee             No              Yes          Yes
+
+SSEEEE AALLSSOO
+     csh(1), dash(1), echo(1), false(1), info(1), kill(1), login(1), nice(1),
+     nohup(1), printenv(1), printf(1), pwd(1), sh(1), test(1), time(1),
+     true(1), which(1), zsh(1)
+
+HHIISSTTOORRYY
+     The bbuuiillttiinn manual page first appeared in FreeBSD 3.4.
+
+AAUUTTHHOORRSS
+     This manual page was written by Sheldon Hearn <_s_h_e_l_d_o_n_h_@_F_r_e_e_B_S_D_._o_r_g>.
+
+macOS 13.2                     December 21, 2010                    macOS 13.2
