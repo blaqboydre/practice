@@ -1,1 +1,1 @@
-This is me practicing C programming labguage on my own
+This is me practicing C programming language on my own
